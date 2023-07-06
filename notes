@@ -2,6 +2,11 @@
 
 ## Chapter 1
 
+A programming language consists of:
+- primitive expressions: "simplest entities the language is concerned with"
+- means of combination: how "compound elements are built from simpler ones"
+- means of abstraction: how "compound elements can be named and manipulated as units"
+
 - Recursion from terminal nodes up a tree = tree accumulation
 - "...the general notion of the environment as providing a context in which evaluation takes place will play an important role in our understanding of program execution."
 - "[Referring to define not being applied to its operands in (define variable_name value)] Such exceptions to the general evaluation rule are called special forms. ... Each special form has its own evaluation rule. The various kinds of expressions (each with its associated evaluation rule) constitute the syntax of the programming language. In comparison with most other programming languages, Lisp has a very simple syntax; that is, the evaluation rule for expressions can be described by a simple general rule together with specialized rules for a small number of special forms."
