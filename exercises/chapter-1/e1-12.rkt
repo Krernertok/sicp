@@ -1,0 +1,56 @@
+#lang sicp
+
+(define (sum-of-naturals n)
+  (/ (* n (+ n 1)) 2))
+
+;(display "Sum of naturals with n = 3:\n")
+;(sum-of-naturals 3)
+
+(define (row-of n)
+  (define (iter-row n row)
+    (if (>= (sum-of-naturals row) n)
+        row
+        (iter-row n (+ row 1))))
+  (iter-row n 1))
+
+;(display "Row of 14:\n")
+;(row-of 14)
+
+(define (index-in-row n)
+  (define row (row-of n))
+  (- n (sum-of-naturals (- row 1))))
+
+;(display "Index-in-row of 14:\n")
+;(index-in-row 14)
+
+(define (pascal-tri-elem n)
+  (define index (index-in-row n))
+  (define row (row-of n))
+  (cond ((= row 1) 1)
+        ((= row 2) 1)
+        ((= index 1) 1)
+        ((= index row) 1)
+        (else (+ (pascal-tri-elem (- n row))
+                 (pascal-tri-elem (- n (- row 1)))))))
+
+(pascal-tri-elem 1)
+(pascal-tri-elem 2)
+(pascal-tri-elem 3)
+(pascal-tri-elem 4)
+(pascal-tri-elem 5)
+(pascal-tri-elem 6)
+(pascal-tri-elem 7)
+(pascal-tri-elem 8)
+(pascal-tri-elem 9)
+(pascal-tri-elem 10)
+(pascal-tri-elem 11)
+(pascal-tri-elem 12)
+(pascal-tri-elem 13)
+(pascal-tri-elem 14)
+(pascal-tri-elem 15)
+(pascal-tri-elem 16)
+(pascal-tri-elem 17)
+(pascal-tri-elem 18)
+(pascal-tri-elem 19)
+(pascal-tri-elem 20)
+(pascal-tri-elem 21)
